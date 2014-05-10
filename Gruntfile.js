@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       coffee: {
         files: [
             '<%= yeoman.app %>/coffee/{,*/}*.coffee',
-            '<%= yeoman.app %>/coffee/directives/{,*/}*.coffee',
+            '<%= yeoman.app %>/coffee/factories/{,*/}*.coffee',
         ],
         tasks: ['coffee']
       },
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
         compile: {
             files: {
                 'app/scripts/app.js'        : 'app/coffee/app.coffee',
-                'app/scripts/directives.js' : 'app/coffee/directives/*.coffee'
+                'app/scripts/factories.js'  : 'app/coffee/factories/*.coffee',
             }
         }
     },
@@ -65,8 +65,8 @@ module.exports = function (grunt) {
           separator: ';',
         },
         dist: {
-          src: ['app/scripts/app.js', 'app/scripts/directives.js'],
-          dest: '.tmp/concat/angular-image-spinner.js',
+          src: ['app/scripts/app.js', 'app/scripts/factories.js'],
+          dest: '.tmp/concat/angular-struct.js',
         },
     },
 
@@ -101,8 +101,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= yeoman.dist %>/angular-image-spinner.min.js': [
-            '<%= yeoman.dist %>/angular-image-spinner.js'
+          '<%= yeoman.dist %>/angular-struct.min.js': [
+            '<%= yeoman.dist %>/angular-struct.js'
           ]
         }
       }
